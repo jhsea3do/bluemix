@@ -13,11 +13,16 @@ ADD \
   https://storage.googleapis.com/kubernetes-release/release/$KUBECTL_VERSION/bin/linux/amd64/kubectl \
   /usr/local/bin/kubectl
 
+ADD \
+  https://master.dockerproject.org/linux/x86_64/docker \
+  /usr/local/bin/docker
+
 RUN \
   cd /tmp \
   && tar xvf Bluemix_CLI.tar.gz \
   && cd Bluemix_CLI && sh ./install_bluemix_cli \
   && rm -rf /tmp/Bluemix_CLI* \
-  && chmod a+x /usr/local/bin/kubectl
+  && chmod a+x /usr/local/bin/kubectl \
+  && chmod a+x /usr/local/bin/docker
 
 ENV BLUEMIX_API_KEY=""
