@@ -14,3 +14,4 @@ docker run -it --rm \
   -v $(pwd)/profile:/root \
   jhsea3do/bluemix-cli:centos7 sh /tmp/bootstrap.sh
 ```
+![Bluemix IBM-Container Plugin Usage](bluemix-oops.png)
